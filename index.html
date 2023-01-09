@@ -14,8 +14,18 @@
     </div>
 
     <div>
-        <button>ADD BOOK</button>
-    </div>    
+        <form action="#" method="post">
+            <label for="book">Book</label>
+            <input type="text" id="book" name="book">
+            <label for="author">Author</label>
+            <input type="text" id="author" name="author">
+            <select name="status">
+                <option value="read" selected>Read</option>
+                <option value="not_read">Not Read</option>
+            </select>
+            <button type="submit">+ Add book</button>
+        </form>
+    </div>
     
     <div>
         <h3>Title</h3>
@@ -23,7 +33,27 @@
         <h3>Status</h3>
     </div>
 
-    <div></div>
+    <div class="book_container">
+        <div>
+            <p>The Lord of The rings</p>
+            <p>J.R.R. Tolkien</p>
+            <button>Read</button>
+            <button>Remove</button>
+        </div>
+        <div>
+            <p>Victoria</p>
+            <p>Knut Hamsun</p>
+            <button>Not Read</button>
+            <button>Remove</button>
+        </div>
+        <div>
+            <p>Fuglane</p>
+            <p>Tarjei Vesaas</p>
+            <button>Not Read</button>
+            <button>Remove</button>
+        </div>
+        
+    </div>
     
 </body>
 </html>
