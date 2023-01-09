@@ -9,51 +9,58 @@
     <script src="script.js" defer></script>
 </head>
 <body>
-    <div>
+
+    <div class="header">
         <h1>My library</h1>
     </div>
 
-    <div>
+    <div class="add-book-form">
         <form action="#" method="post">
-            <label for="book">Book</label>
-            <input type="text" id="book" name="book">
-            <label for="author">Author</label>
-            <input type="text" id="author" name="author">
+            <div>
+                <label for="book">Book</label>
+                <input type="text" id="book" name="book">
+            </div>
+            <div>
+                <label for="author">Author</label>
+                <input type="text" id="author" name="author">
+            </div>
             <select name="status">
                 <option value="read" selected>Read</option>
                 <option value="not_read">Not Read</option>
             </select>
-            <button type="submit">+ Add book</button>
+            <button type="submit" class="submit-button">+ Add book</button>
         </form>
     </div>
     
-    <div>
-        <h3>Title</h3>
-        <h3>Author</h3>
-        <h3>Status</h3>
+    <div class="book-container">
+        <table>
+            <thead>
+                <th scope="col">Title</th>
+                <th scope="col">Author</th>
+                <th scope="col" colspan="2">Status</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>The Lord of The rings</td>
+                    <td>J.R.R. Tolkien</td>
+                    <td><button>Read</button></td>
+                    <td><button>Remove</button></td>
+                </tr>
+                <tr>
+                    <td>Victoria</td>
+                    <td>Knut Hamsun</td>
+                    <td><button>Not Read</button></td>
+                    <td><button>Remove</button></td>
+                </tr>
+                <tr>
+                    <td>Fuglane</td>
+                    <td>Tarjei Vesaas</td>
+                    <td><button>Not Read</button></td>
+                    <td><button>Remove</button></td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 
-    <div class="book_container">
-        <div>
-            <p>The Lord of The rings</p>
-            <p>J.R.R. Tolkien</p>
-            <button>Read</button>
-            <button>Remove</button>
-        </div>
-        <div>
-            <p>Victoria</p>
-            <p>Knut Hamsun</p>
-            <button>Not Read</button>
-            <button>Remove</button>
-        </div>
-        <div>
-            <p>Fuglane</p>
-            <p>Tarjei Vesaas</p>
-            <button>Not Read</button>
-            <button>Remove</button>
-        </div>
-        
-    </div>
-    
 </body>
 </html>

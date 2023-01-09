@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,600;1,300&display=swap');
+
+:root {
+    /* Color-palette */
+    --peach: rgb(234, 199, 199);
+    --blue: rgb(160, 195, 210);
+    --grey: rgb(247, 245, 235);
+    --beige: rgb(234, 224, 218);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: start;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--grey);
+}
+
+.header {
+    padding: 5rem 20rem 3rem 10rem;
+    background-color: var(--beige);
+    box-shadow: 0 0 0.5rem 0 rgb(0, 0, 0, 0.4);
+}
+
+.add-book-form {
+    padding: 3rem 20rem 3rem 10rem;
+}
+
+form {
+    width: 60%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr) 0.5fr;
+    gap: 1.5rem;
+}
+
+form > div {
+    display: flex;
+    flex-direction: column;
+}
+
+select {
+    text-align: center;
+    width: 8rem;
+    height: 50%;
+    align-self: end;
+}
+
+button {
+    width: 8rem;
+    border: 1px solid gray;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.submit-button {
+    background-color: var(--blue);
+}
+
+.submit-button:hover {
+    opacity: 0.8;
+}
+
+.book-container {
+    padding: 0 20rem 0 10rem;
+}
+
+table {
+    width: 90%;
+    border-spacing: 10px;
+    border-collapse: collapse;
+}
+
+th, td {
+    border-bottom: 1px solid black;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+tr > td:last-child > button {
+    background-color: var(--peach);
+}
