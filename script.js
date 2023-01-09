@@ -13,20 +13,18 @@ form.addEventListener('submit', event => {
     event.preventDefault();
     const title = form.elements.book.value;
     const author = form.elements.author.value;
-    const status = form.elements.status.value;
+    const status = form.elements.status.value === 'true';
     myLibrary.push(new Book(title, author, status));
     displayBooks(myLibrary);
 });
 
 function displayBooks(array) {
+    
+    //Clear table for each iteration
+    table.innerHTML = "";
+    
     for (let i = 0; i < array.length; i++) {
         let obj = array[i];
-
-        // Check if the object is already displayed in the DOM
-        if (obj.displayed) {
-            continue;
-        }
-
         let row = document.createElement("tr");
 
         for (let key in obj) {
@@ -39,7 +37,14 @@ function displayBooks(array) {
             } else {
                 let col = document.createElement("td");
                 let button = document.createElement("button");
-                button.innerHTML = obj[key];
+                if (obj[key]) {
+                    button.classList.add('read');
+                    button.innerHTML = 'Read';
+                } else {
+                    button.innerHTML = 'Not Read';
+                }
+                button.id = i;
+                button.addEventListener('click', changeStatus, false);
                 col.appendChild(button);
                 row.appendChild(col);
             }
@@ -47,13 +52,25 @@ function displayBooks(array) {
 
         let rmv = document.createElement("td");
         let rmvButton = document.createElement("button");
-        rmvButton.innerHTML = "X"
+
+        rmvButton.innerHTML = "X";
+        rmvButton.className = i;
+        rmvButton.addEventListener('click', removeBook, false);
         rmv.appendChild(rmvButton);
         row.appendChild(rmv);
 
         table.appendChild(row);
-
-        obj.displayed = true;
-
     }
+}
+
+function removeBook(event) {
+    let index = Number(event.target.className);
+    myLibrary.splice(index, 1);
+    displayBooks(myLibrary);
+}
+
+function changeStatus(event) {
+    let index = Number(event.target.id);
+    myLibrary[index].status = !myLibrary[index].status;
+    displayBooks(myLibrary);
 }

@@ -18,15 +18,15 @@
         <form action="#" method="post" id="form">
             <div>
                 <label for="book">Book</label>
-                <input type="text" id="book" name="book">
+                <input type="text" id="book" name="book" required>
             </div>
             <div>
                 <label for="author">Author</label>
                 <input type="text" id="author" name="author">
             </div>
             <select name="status">
-                <option value="Read" selected>Read</option>
-                <option value="Not Read">Not Read</option>
+                <option value="true" selected>Read</option>
+                <option value="false">Not Read</option>
             </select>
             <button type="submit" class="submit-button">+ Add book</button>
         </form>
@@ -34,11 +34,13 @@
     
     <div class="book-container">
         <table>
-            <thead>
-                <th scope="col">Title</th>
-                <th scope="col">Author</th>
-                <th scope="col" colspan="2">Status</th>
-            </thead>
+            <div class="books-header">
+                <thead>
+                    <th scope="col">Title</th>
+                    <th scope="col">Author</th>
+                    <th scope="col" colspan="2">Status</th>
+                </thead>
+            </div>
             <tbody id="books">
             </tbody>
         </table>
