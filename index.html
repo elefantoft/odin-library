@@ -15,7 +15,7 @@
     </div>
 
     <div class="add-book-form">
-        <form action="#" method="post">
+        <form action="#" method="post" id="form">
             <div>
                 <label for="book">Book</label>
                 <input type="text" id="book" name="book">
@@ -25,8 +25,8 @@
                 <input type="text" id="author" name="author">
             </div>
             <select name="status">
-                <option value="read" selected>Read</option>
-                <option value="not_read">Not Read</option>
+                <option value="Read" selected>Read</option>
+                <option value="Not Read">Not Read</option>
             </select>
             <button type="submit" class="submit-button">+ Add book</button>
         </form>
@@ -39,25 +39,7 @@
                 <th scope="col">Author</th>
                 <th scope="col" colspan="2">Status</th>
             </thead>
-            <tbody>
-                <tr>
-                    <td>The Lord of The rings</td>
-                    <td>J.R.R. Tolkien</td>
-                    <td><button>Read</button></td>
-                    <td><button>Remove</button></td>
-                </tr>
-                <tr>
-                    <td>Victoria</td>
-                    <td>Knut Hamsun</td>
-                    <td><button>Not Read</button></td>
-                    <td><button>Remove</button></td>
-                </tr>
-                <tr>
-                    <td>Fuglane</td>
-                    <td>Tarjei Vesaas</td>
-                    <td><button>Not Read</button></td>
-                    <td><button>Remove</button></td>
-                </tr>
+            <tbody id="books">
             </tbody>
         </table>
     </div>

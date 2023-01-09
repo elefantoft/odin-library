@@ -13,6 +13,7 @@
     padding: 0;
     box-sizing: border-box;
     text-align: start;
+    white-space: nowrap;
 }
 
 body {
@@ -71,17 +72,42 @@ button {
 }
 
 table {
-    width: 90%;
-    border-spacing: 10px;
+    width: 100%;
     border-collapse: collapse;
+    table-layout: fixed;
+}
+
+thead {
+    font-size: 1.5rem;
 }
 
 th, td {
     border-bottom: 1px solid black;
+    padding-right: 3rem;
+}
+
+
+th {
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+}
+
+th:first-child, th:nth-child(2) {
+    width: 35%;
+}
+
+td {
     padding-top: 3rem;
     padding-bottom: 3rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.text-field {
+    width: 20rem;
 }
 
 tr > td:last-child > button {
     background-color: var(--peach);
+    width: 3rem;
 }
